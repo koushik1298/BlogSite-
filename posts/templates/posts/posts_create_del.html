@@ -1,0 +1,9 @@
+{% extends "posts/posts_base.html "%}
+{% block post_content %}
+<h3>Are You Sure You Want To Delete </h3>
+{% include "posts/_post.html" with post=object  hide_delete=True %}
+<form  method="post">
+<input type="submit" value="confrim delete">
+<a href="{% url 'posts:single' username=user.username pk=object.pk %}">cancel</a>
+</form>
+{% endblock %}
